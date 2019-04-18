@@ -22,7 +22,7 @@ title                    : "Jenny Blog"
 title_separator          : "-"
 name                     : "Jenny.J.Lee"
 description              : "An amazing website."
-url                      : "https://jennylee4517.github.io" # the base hostname & protocol for your site e.g. 
+url                      : "https://jennylee.github.io" # the base hostname & protocol for your site e.g. 
 baseurl                  : "" # the subpath of your site, e.g. 
 repository               : "" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "" # path of fallback teaser image, e.g. 
@@ -108,15 +108,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Jenny Lee"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  bio              : "self-taught developer"
+  location         : "Seoul"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      url: mailto:jennylee4517@email.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
