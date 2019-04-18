@@ -26,7 +26,7 @@ url                      : "https://jennylee.github.io" # the base hostname & pr
 baseurl                  : "" # the subpath of your site, e.g. 
 repository               : "" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "" # path of fallback teaser image, e.g. 
-logo                     : "/assets/images/IMG_1783.PNG" # path of logo image to display in the masthead, e.g. 
+logo                     :  # path of logo image to display in the masthead, e.g. "/assets/images/IMG_1783.PNG"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
