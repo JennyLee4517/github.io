@@ -23,7 +23,7 @@ title                    : "Jenny Blog"
 title_separator          : "-"
 name                     : "Jenny.J.Lee"
 description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://jennylee4517.github.io"
+url                      : "https://jennylee4517.github.io" # the base hostname & protocol for your site e.g. 
 baseurl                  : # the subpath of your site, e.g. ""
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
