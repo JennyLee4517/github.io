@@ -112,7 +112,7 @@ author:
   avatar           : "/assets/images/IMG_1707.PNG" # path of avatar image, e.g. 
   bio              : "Yay!"
   location         : "Seoul, South Korea"
-  email            : "jennylee4517@gmail.com"
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
