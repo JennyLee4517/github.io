@@ -1,5 +1,5 @@
 ---
-title: "2일차 : Wrapper Class, 연산자, 제어문"
+title: "Java 2일차 : Wrapper Class, 연산자, 제어문"
 date: 2019-04-04 18:00:00 -0400
 categories: Java
 
