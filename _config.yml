@@ -18,15 +18,15 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Jenny Blog"
+title                    : "Jenny the Developer"
 title_separator          : "-"
-name                     : "Jenny.J.Lee"
-description              : "An amazing website."
+name                     : "Jenny.JH.Lee"
+description              : "Records about Jenny"
 url                      : "https://jennylee4517.github.io" # the base hostname & protocol for your site e.g. 
 baseurl                  : "" # the subpath of your site, e.g. 
 repository               : "" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "" # path of fallback teaser image, e.g. 
-logo                     :  # path of logo image to display in the masthead, e.g. "/assets/images/IMG_1783.PNG"
+logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/IMG_1783.PNG"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -66,9 +66,9 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
+search_provider          : true # lunr (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -110,9 +110,9 @@ analytics:
 author:
   name             : "Jenny Lee"
   avatar           : "/assets/images/IMG_1707.PNG" # path of avatar image, e.g. 
-  bio              : "self-taught developer"
-  location         : "Seoul"
-  email            :
+  bio              : "Self-taught developer"
+  location         : "Seoul, South Korea"
+  email            : "jennylee4517@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
