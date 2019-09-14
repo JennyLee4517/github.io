@@ -33,27 +33,27 @@ comments: true
     <% 
 
        List<String> list = new ArrayList<String>();
-    list.add("rose");
-    list.add("tulip");
-    list.add("sunflower");
-    list.add("daisy");
-    list.add("orchard");
+	    list.add("rose");
+	    list.add("tulip");
+	    list.add("sunflower");
+	    list.add("daisy");
+	    list.add("orchard");
 
-    //리퀘트에 리스트 컬렉션 저장하기 
-    request.setAttribute("data", list);
-    //리퀘스트에 문자열 타입 저장하기
-    request.setAttribute("msg", "Happy day");
+	    //리퀘트에 리스트 컬렉션 저장하기 
+	    request.setAttribute("data", list);
+	    //리퀘스트에 문자열 타입 저장하기
+	    request.setAttribute("msg", "Happy day");
     %>
 
     <h2>리퀘스트에 저장된 데이타 읽어오기</h2>
 
     <%
-       //반환값이 오브젝트이므로 꼭 형변환을 해줘야 한다.
-       List<String> datas = (ArrayList<String>)request.getAttribute("data");
+       	//반환값이 오브젝트이므로 꼭 형변환을 해줘야 한다.
+       	List<String> datas = (ArrayList<String>)request.getAttribute("data");
 
-    String msg = (String)request.getAttribute("msg");
+    	String msg = (String)request.getAttribute("msg");
 
-    for(String s: datas){
+    	for(String s: datas){
     %>
     <%=s %><br>
       <%
