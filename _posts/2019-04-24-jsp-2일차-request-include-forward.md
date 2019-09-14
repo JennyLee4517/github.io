@@ -31,18 +31,17 @@ comments: true
   <body>
 
     <% 
+	List<String> list = new ArrayList<String>();
+	list.add("rose");
+	list.add("tulip");
+	list.add("sunflower");
+	list.add("daisy");
+	list.add("orchard");
 
-       List<String> list = new ArrayList<String>();
-	    list.add("rose");
-	    list.add("tulip");
-	    list.add("sunflower");
-	    list.add("daisy");
-	    list.add("orchard");
-
-	    //리퀘트에 리스트 컬렉션 저장하기 
-	    request.setAttribute("data", list);
-	    //리퀘스트에 문자열 타입 저장하기
-	    request.setAttribute("msg", "Happy day");
+	//리퀘트에 리스트 컬렉션 저장하기 
+	request.setAttribute("data", list);
+	//리퀘스트에 문자열 타입 저장하기
+	request.setAttribute("msg", "Happy day");
     %>
 
     <h2>리퀘스트에 저장된 데이타 읽어오기</h2>
