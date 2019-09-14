@@ -17,7 +17,7 @@ comments: true
 
 - name으로 저장된 데이타를 읽어옴 : Object o 반환
 
-```html
+```jsp
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
