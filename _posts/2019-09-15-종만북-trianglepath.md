@@ -1,6 +1,6 @@
 ---
 title: "[종만북] TRIANGLEPATH 삼각형 위의 최대 경로"
-date: 2019-09-14 20:46:00 -0400
+date: 2019-09-15 20:46:00 -0400
 categories: PS
 comments: true
 tag : [동적계획법]
