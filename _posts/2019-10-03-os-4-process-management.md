@@ -49,7 +49,6 @@ comments: true
 * fork() 시스템 콜
 
 ![img](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/04_01.png?raw=true)
-
 	* fork()실행 시점에서 자식 프로세스가 생성되며, PC도 그대로 복사되기 때문에, 그 자식프로세스는 main()함수를 첨부터 새로 실행하는게 아니라 fork()함수 이하부터 실행함 (그니까 fork 한다고 무한히 fork되는게 아님;;)
 	* fork() 함수의 retrun 값을 통해 부모, 자식을 구분할 수 있다. 이걸로 부모 자식간 다른 일을 시킬 수 있음.
 	* 헷갈리면 위의 코드를 두개 띄워놓고 부모/자식 나눠서 생각해보기! 
