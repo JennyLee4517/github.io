@@ -104,20 +104,20 @@ comments: true
 	* 아래의 두가지 atomic연산에 의해서만 접근 가능(동시연산)
 		* P(S) :  자원을 획득하기
 ```c	
- while(S<=0) do no-op;
-	S—;
+ 	while(S<=0) do no-op;
+		S—;
 ```
 
 * 만약 S가 양수면, S는 감소하며 진입한다. 그렇지 않으면 양수가될때까지 기다린다(busy-wait)  
 	* V(S) : 자원을 반납하기
 ```c
-S++;
+	S++;
 ```
 
 ### Critical Section of n Processes ###
 
 ```c
-* **Stnchronization variable**
+**Synchronization variable**
 semaphore mutex; /* initially 1 : 1개가 CS에 들어갈 수 있다*/
  
 **Process Pi**
@@ -244,8 +244,8 @@ wakeup(P); // 다음 애를 깨워주기
 * 프로세스가 모니터 안에서 기다릴 수 있도록 하기 위해 condition variable 사용 : contidion x, y;
 * Condition variable은 wait와 signal 연산에 의해서만 접근 가능 : 
 	* x.wait(); x.wait()을 invoke한 프로세스는 다른 프로세스가 x.signal()을 invoke하기 전까지 suspend된다.
-	* x.signal(); x.signal()은 정확하게 하나의 suspend된 프로세스를 resume한다. suspend된 프로그램이 없으면 아무일도 일어나지 않는다
-*![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_24.png?raw=true)
+	* x.signal(); x.signal()은 정확하게 하나의 suspend된 프로세스를 resume한다. suspend된 프로그램이 없으면 아무일도 일어나지 않는다  
+![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_24.png?raw=true)
  
 * 보통은 쉽게 세마포어 코드를 모니터 코드로 변경할 수 있다
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/6_25.png?raw=true)
