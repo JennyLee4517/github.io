@@ -68,7 +68,7 @@ comments: true
 
 #### 각각의 방법에 대해 더 자세히 알아보자 ####
 
-### Deadlock Prevention ###
+## Deadlock Prevention ##
 
 **Mutual Exclusion**
 * 공유해서는 안되는 자원의 경우 반드시 상호배제가 성립해야 함   
