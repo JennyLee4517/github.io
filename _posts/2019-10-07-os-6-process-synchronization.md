@@ -89,7 +89,7 @@ comments: true
 * 문제점 : Busy Waiting (Spin Lock) - while문을 계속 쓰면서 기다림 - CPU를 계속 잡고있음. 굉장히 비효율적으로 기다림.
 
 
-### Synchronization Hardware###
+### Synchronization Hardware ###
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_12.png?raw=true)
 * 소프트웨어적인 동기화는, 한 줄의 코드를 동작하는 중에도 여러개의 인스트럭션으로 구성되기 때문에 실질적으로 한줄의 코드라고 해도 동시동작이 아닐 경우가 대다수라 CPU를 빼앗길 수 있기 때문에 인스트럭션 단위로 atomic하게 하드웨어단에서 동기화가 지원된다면 이 문제는 아~주 간단하게 해결할 수 있다
 * Test_and_set(a) : a라는 데이터의 현재값을 읽고, 그 값을 1로 바꿔주는 동시 동작
@@ -130,7 +130,7 @@ do{
 ```
 * busy-wait는 효율적이지 못함(Spin lock) - 쓸데없이 CPU사용
 * 그러니 Block & Wakeup 방식의 구현을 통해 해결해보자!(Sleep lock)
-### Block / Wakeup Implementation###
+### Block / Wakeup Implementation ###
 * Semaphore를 다음과 같이 정의
 ```c
  typedef struct
