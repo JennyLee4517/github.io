@@ -47,7 +47,7 @@ comments: true
 ### 임계구역 문제 ###
 * n개의 프로세스가 공유 데이터를 동시에 사용하기를 원하는 경우
 * 각 프로세스의 code segment에 공유 데이터를 접근하는 코드인 critical section이 존재
-* 하나의 프로세스가 sritical section에 있을 때 다른 모든 프로세스는 그 구역에 들어갈 수 없어야 한다(기다리게 한다)
+* 하나의 프로세스가 critical section에 있을 때 다른 모든 프로세스는 그 구역에 들어갈 수 없어야 한다(기다리게 한다)
 
 ### 해결방법 ###
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_08.png?raw=true)
