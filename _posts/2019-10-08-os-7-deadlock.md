@@ -69,6 +69,7 @@ comments: true
 #### 각각의 방법에 대해 더 자세히 알아보자 ####
 
 ### Deadlock Prevention ###
+
 **Mutual Exclusion**
 * 공유해서는 안되는 자원의 경우 반드시 상호배제가 성립해야 함   
 
@@ -89,8 +90,8 @@ comments: true
 
 **Deadlock Prevention의 문제점**
 * Utilization의 저하, throughput 감소, starvation 문제
- 
- 
+
+
 ### Deadlock Avoidance ###
 **Deadlock avoidance**
 * 자원 교청에 대한 부가정보를 이용해서 자원 할당이 deadlock으로부터 안전한지를 동적으로 조사해서 안전한 경우에만 할당
@@ -107,13 +108,13 @@ comments: true
 2. Pi-1이 종료되면 Pi의 자원요청을 만족시켜 수행한다  
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/07_05.png?raw=true)
 
- 
+
 **시스템이 safe state에 있으면**
 * no deadlock
- 
+
 **시스템이 unsafe state에 있으면**
 * possibility of deadlock
- 
+
 **Deadlock Avoidance**
 * 시스템이 unsafe state에 들어가지 않는 것을 보장
 * 두가지 경우의 회피 알고리즘
@@ -137,7 +138,7 @@ availble = total - allocation 
 ### Deadlock Detection and recovery ###
 * 데드락이 뭐 그렇게 흔하게 일어나는것도 아닌데 뭐…
 * 닥치면 수습하자!
- 
+
 **Deadlock Detection**
 * Resource type당 single instance인 경우  
 	* 자원할당 그래프에서의 사이클이 곧 데드락을 의미
