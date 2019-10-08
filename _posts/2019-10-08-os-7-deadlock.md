@@ -8,41 +8,41 @@ comments: true
 
 ### Deadlock ###
 * 일련의 프로세스들이 서로가 가진 자원을 기다리며 block된 상태
- 
+
 ### Resource(자원) ###
 * 하드웨어, 소프트웨어 등을 포함하는 개념
 * 예) I/O device, CPU cycle, memory space, semaphore 등
 * 프로세스가 자원을 사용하는 절차
 - Request > Allocate > Use > Release
- 
+
 #### deadlock ex1 ####
 * 시스템에 2개의 tape drive가 있다
 * 프로세스 P1과 P2각각이 하나의 tape drive를 보유한 채 다른 하나를 기다리고 있다.
- 
+
 #### deadlock ex2 ####
 * Binary semaphores A & B  
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/07_01.png?raw=true)
  
- 
+
 ### Deadlock 발생의 4가지 조건 ###
 1. Mutual Exclusion (상호배제)
 - 매순간 하나의 프로세스만이 자원을 사용할 수 있음)
- 
+
 2. No Preemption (비선점)
 - 프로세스는 자원을 스스로 내어놓을 뿐 강제로 빼앗기지 않음
- 
+
 3. Hold and wait (보유대기)
 - 자원을 가진 프로세스가 다른 자원을 기다릴 때 보유자원을 놓지 않고 계속 갖고있음
- 
+
 4. Circular wait(순환대기)
 - 자원을 기다리는 프로세스간에 사이클이 형성되어야 함
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/07_02.png?raw=true)
- 
- 
+
+
 ### Resource-Allocation Graph (자원할당 그래프) ###
 * 데드락이 걸렸는지 알아보기 위해 그려보는 것
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/07_03.png?raw=true)
- 
+
 #### 데드락인지 아닌지 어떻게 구분할까? ####
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/07_04.png?raw=true)
 
@@ -50,24 +50,24 @@ comments: true
 * 만약 사이클이 있다면?
 1. if only one instance per resource type, then **deadlock** - 사이클 당 인스턴스가 한개뿐일 때 (왼쪽 그림)
 2. if several instances per resource type, **possibiity** of deadlock (오른쪽 그림)
- 
+
 ### Deadlock의 처리 방법 ###
 * Deadlock Prevention  
 자원 할당 시 데드락의 4가지 필요조건 중 어느 하나가 만족되지 않도록 하자
- 
+
 * Deadlock Avoidance  
 자원 요청에 대한 부가적인 정보를 이용해서 데드락의 가능성이 없는 경우에만 자원을 할당  
 시스템 state가 원래 state로 돌아올 수 있는 경우에만 자원을 할당
- 
+
 * Deadlock Detection and recovery  
 데드락 발생은 허용하되 그에 대한 감지 루틴을 두어 데드락 발견시 리커버되도록
- 
+
 * Deadlock Ignorance  
 데드락을 시스템이 책임지지 않는 것  
 유닉스를 포함한 대부분의 OS가 채택함 
- 
+
 #### 각각의 방법에 대해 더 자세히 알아보자 ####
- 
+
 ### Deadlock Prevention ###
 **Mutual Exclusion**
 * 공유해서는 안되는 자원의 경우 반드시 상호배제가 성립해야 함   
