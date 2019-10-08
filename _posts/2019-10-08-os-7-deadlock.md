@@ -171,9 +171,8 @@ P0 후에도 P2를 만족시켜줄 순 없음 -> 데드락 발견!-> 그럼 리�
 * Resource Preemption
 	* 비용을 최소하 할 victim의 선정
 	* safe state 로 rollback하여 process를 재시작
-	* Starvation문제 : 동일한 프로세스가 계속해서 victim으로 선정되는 경우, cost factor에 rollback 횟수도 같이 고려해서 공정하게..
- 
- 
+	* Starvation문제 : 동일한 프로세스가 계속해서 victim으로 선정되는 경우, cost factor에 rollback 횟수도 같이 고려해서 공정하게..  
+
 ### Deadlock Ignorance ###
 **Deadlock이 일어나지 않는다고 생각하고 아무런 조치도 취하지 않음**
 * 데드락이 매우 드물게 발생하므로 그것에 대한 조치 자체가 더 큰 오버헤드일 수 있다
