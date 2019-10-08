@@ -23,7 +23,7 @@ comments: true
 * Binary semaphores A & B  
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/07_01.png?raw=true)
  
-
+---
 ### Deadlock 발생의 4가지 조건 ###
 1. Mutual Exclusion (상호배제)
 - 매순간 하나의 프로세스만이 자원을 사용할 수 있음)
@@ -68,6 +68,7 @@ comments: true
 
 #### 각각의 방법에 대해 더 자세히 알아보자 ####
 
+---
 ## Deadlock Prevention ##
 
 **Mutual Exclusion**
@@ -91,8 +92,8 @@ comments: true
 **Deadlock Prevention의 문제점**
 * Utilization의 저하, throughput 감소, starvation 문제
 
-
-### Deadlock Avoidance ###
+---
+## Deadlock Avoidance ##
 **Deadlock avoidance**
 * 자원 교청에 대한 부가정보를 이용해서 자원 할당이 deadlock으로부터 안전한지를 동적으로 조사해서 안전한 경우에만 할당
 * 가장 단순하고 일반적인 모델은 프로세스들이 필요로 하는 각 자원별 최대 사용량을 미리 선언하도록 하는 방법임
@@ -134,7 +135,7 @@ availble = total - allocation 
 
 즉, p1, p3, p4, p2, p0 순서로 요청된다면 이 상황은 데드락이 절대 생기지 않는 순서가 된다. 따라서 safe state이다.   
  
- 
+---
 ### Deadlock Detection and recovery ###
 * 데드락이 뭐 그렇게 흔하게 일어나는것도 아닌데 뭐…
 * 닥치면 수습하자!
@@ -172,7 +173,8 @@ P0 후에도 P2를 만족시켜줄 순 없음 -> 데드락 발견!-> 그럼 리�
 	* 비용을 최소하 할 victim의 선정
 	* safe state 로 rollback하여 process를 재시작
 	* Starvation문제 : 동일한 프로세스가 계속해서 victim으로 선정되는 경우, cost factor에 rollback 횟수도 같이 고려해서 공정하게..  
-
+	
+---
 ### Deadlock Ignorance ###
 **Deadlock이 일어나지 않는다고 생각하고 아무런 조치도 취하지 않음**
 * 데드락이 매우 드물게 발생하므로 그것에 대한 조치 자체가 더 큰 오버헤드일 수 있다
