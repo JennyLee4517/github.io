@@ -44,7 +44,7 @@ comments: true
 * 일관성 유지를 위해 협력 프로세스간 실행순서를 정해주는 매커니즘이 필요
 * race condition을 막기 위해서는 concurrent process는 꼭 동기화 되어야한다.
 
-### 임계구역 문제###
+### 임계구역 문제 ###
 * n개의 프로세스가 공유 데이터를 동시에 사용하기를 원하는 경우
 * 각 프로세스의 code segment에 공유 데이터를 접근하는 코드인 critical section이 존재
 * 하나의 프로세스가 sritical section에 있을 때 다른 모든 프로세스는 그 구역에 들어갈 수 없어야 한다(기다리게 한다)
