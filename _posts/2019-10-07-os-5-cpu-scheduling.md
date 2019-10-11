@@ -53,7 +53,7 @@ comments: true
 		* 기다린 시간을 모두 합친 개념
 	* Response time(응답시간)
 		* amount of time it takes from when a request was submitted until the first response is produced, not output(for time-sharing environment)
-		* 처음으로 CPU를 얻을때까지 기다린 시간
+		* 처음으로 CPU를 얻을때까지 기다린 시간  
 
 ### FCFS (First-Come First-Served) - 비선점형 ###
 * 먼저 온 순서대로 처리해준다
@@ -61,7 +61,7 @@ comments: true
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/05_03.png?raw=true)
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/05_04.png?raw=true)
 
-* 앞에 어떤 프로세스가 있느냐에 따라 효율성의 기복이 큼
+* 앞에 어떤 프로세스가 있느냐에 따라 효율성의 기복이 큼  
 
 
 ### SJF (Shortest Job First) ###
@@ -86,7 +86,7 @@ n+1번째의 예측치 = a*(n번째의 실제사용시간) + (1-a)*(n번째의 �
 (단, 0 <= a <= 1)
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/05_07.png?raw=true)
 
-최근의 실제사용시간이 가장 높은 가중치를 갖는다  
+최근의 실제사용시간이 가장 높은 가중치를 갖는다    
 
 
 ### Priority Scheduling ###
@@ -94,7 +94,7 @@ n+1번째의 예측치 = a*(n번째의 실제사용시간) + (1-a)*(n번째의 �
 * 가장 높은 우선순위를 가진 프로세스에게 CPU 할당
 * SJF는 일종의 우선순위 스케줄링임
 * 문제점 : Starvation
-* 해결법 : Aging - 시간이 지남에 따라 우선순위를 높여준다(노화 > 요실금)
+* 해결법 : Aging - 시간이 지남에 따라 우선순위를 높여준다(노화 > 요실금)  
 
 ### Round Robin (RR) ###
 * 각 프로세스는 동일한 크기의 할당시간을 가짐(10-100ms)
@@ -111,7 +111,7 @@ n+1번째의 예측치 = a*(n번째의 실제사용시간) + (1-a)*(n번째의 �
  
 * RR… 공정하긴 한데 정말로 효율적인 방식인걸까???
 * 진짜진짜 사용시간이 짧은애는 조금 더 호의를 받을 순 없는걸까?
-* 그래서 나온게…. 👇
+* 그래서 나온게…. 👇  
 
 ### Multilevel Queue ###
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/05_10.png?raw=true)
@@ -129,7 +129,7 @@ n+1번째의 예측치 = a*(n번째의 실제사용시간) + (1-a)*(n번째의 �
 		* starvation될 가능성있음 - 우선순위 노픈 줄이 비지 않으면…아랫줄은 영영 기다려야 한다
 	* Time slice
 		* 각 큐에 CPU time을 적절한 비율로 할당
-		* 예) 80% to foreground in RR, 20% to background in FCFS
+		* 예) 80% to foreground in RR, 20% to background in FCFS  
  
 ### Multilevel Feedback Queue ###
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/05_11.png?raw=true)
@@ -142,7 +142,7 @@ n+1번째의 예측치 = a*(n번째의 실제사용시간) + (1-a)*(n번째의 �
 
  
  
-여태까지는 CPU가 하나뿐일 때였고.. 그 외에도 특별한 케이스에 대한 스케줄링 방식을 알아보자  
+여태까지는 CPU가 하나뿐일 때였고.. 그 외에도 특별한 케이스에 대한 스케줄링 방식을 알아보자    
  
 ### Multiple-Processor Scheduling ###
 * CPU가 여러개인 경우 스케줄링은 더욱 복잡해짐
@@ -156,18 +156,18 @@ n+1번째의 예측치 = a*(n번째의 실제사용시간) + (1-a)*(n번째의 �
 	* 모든 CPU가 대등함
 	* 각 프로세서가 각자 알아서 스케줄링 결정
 * Asymmetric multiprocessing
-	* 하나의 프로세서가 시스템 데이터의 접근과 공유를 책임지고(컨트롤) 나머지 프로세서는 거기에 따름(일꾼)
+	* 하나의 프로세서가 시스템 데이터의 접근과 공유를 책임지고(컨트롤) 나머지 프로세서는 거기에 따름(일꾼)  
 ### Real-Time Scheduling ###
 * Hard real-time systems
 	* 정해진 시간 안에 반드시 끝내도록 스케줄링
 * Soft real-time computing
-	* 데드라인을 꼭 보장하진 않아도 그냥 일반 프로세스에 비해 높은 우선순위만 갖게 한다
+	* 데드라인을 꼭 보장하진 않아도 그냥 일반 프로세스에 비해 높은 우선순위만 갖게 한다  
 ### Thread Scheduling###
 * 스레드 : 하나의 프로세스 안에 CPU 수행단위가 여러개인것
 * Local Scheduling
 	* 유저레벨 스레드의 경우 사용자 수준의 스레드 라이브러리에 의해 스케줄링
 * Global Scheduling
-	* 커널레벨 스레드의 경우 일반 프로세스와 마찬가지로 커널의 단기 스케줄러가 어떤 스레드를 스케줄할지 결정
+	* 커널레벨 스레드의 경우 일반 프로세스와 마찬가지로 커널의 단기 스케줄러가 어떤 스레드를 스케줄할지 결정  
  
 ### Algorithm Evaluation ###
 * Queueing models
