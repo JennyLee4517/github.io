@@ -15,6 +15,7 @@ comments: true
 
 * interactive job이 답답하지 않게 해주는것이 포인트
 * 얼만큼 시간을 주고 뺏을거냐?
+
 ### 프로세스의 특성 분류 ###
 * I/O bound process
 	* CPU를 잡고 계산하는 시간보다 I/O에 많은 시간이 필요한 job
@@ -22,6 +23,7 @@ comments: true
 * CPU-bound process
 	* 계산 위주의 job
 	* few very long CPU bursts
+
 ### CPU Scheduler & Dispatcher ###
 * CPU Scheduler
 	* ready 상태의 프로세스 중에서 이번에 CPU를 줄 프로세스 고르기
@@ -35,9 +37,7 @@ comments: true
 4. Terminate
 * 1, 4는 자진반납 - nonpreemptive(비선점형)
 * 2, 3은 강제반납 - preemptive(선점형)
- 
- 
- 
+
 ### Scheduling Criteria ###
 * 시스템 입장에서
 	* CPU utilization(이용률)
@@ -54,6 +54,7 @@ comments: true
 	* Response time(응답시간)
 		* amount of time it takes from when a request was submitted until the first response is produced, not output(for time-sharing environment)
 		* 처음으로 CPU를 얻을때까지 기다린 시간
+
 ### FCFS (First-Come First-Served) - 비선점형 ###
 * 먼저 온 순서대로 처리해준다
 * 비효율적인 예
