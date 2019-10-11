@@ -130,7 +130,8 @@ n+1번째의 예측치 = a*(n번째의 실제사용시간) + (1-a)*(n번째의 �
 	* Time slice
 		* 각 큐에 CPU time을 적절한 비율로 할당
 		* 예) 80% to foreground in RR, 20% to background in FCFS  
- 
+  
+
 ### Multilevel Feedback Queue ###
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/05_11.png?raw=true)
  
