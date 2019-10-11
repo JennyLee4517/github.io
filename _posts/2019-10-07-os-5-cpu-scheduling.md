@@ -163,7 +163,8 @@ n+1번째의 예측치 = a*(n번째의 실제사용시간) + (1-a)*(n번째의 �
 	* 정해진 시간 안에 반드시 끝내도록 스케줄링
 * Soft real-time computing
 	* 데드라인을 꼭 보장하진 않아도 그냥 일반 프로세스에 비해 높은 우선순위만 갖게 한다  
-### Thread Scheduling###
+  
+### Thread Scheduling ###
 * 스레드 : 하나의 프로세스 안에 CPU 수행단위가 여러개인것
 * Local Scheduling
 	* 유저레벨 스레드의 경우 사용자 수준의 스레드 라이브러리에 의해 스케줄링
