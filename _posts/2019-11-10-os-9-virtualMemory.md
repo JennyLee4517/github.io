@@ -23,7 +23,7 @@ comments: true
 ## Page Fault ##
 • invalid page를 접근하면 MMU가 trap을 발생시킴(page fault trap)  
 • Kernel mode로 들어가서 page fault handler가 invoke됨  
-• 다음과 같은 순서로 page fault를 처기한다  
+• 다음과 같은 순서로 page fault를 처리한다  
 1. Invalid reference? ( eg. bad address, protection violation) => abort process
 2. Get an empty page frame (빈게 없다면 뺏어라도 와라)
 3. 해당 페이지를 디스크에서 메모리로 읽어온다  
@@ -84,7 +84,8 @@ comments: true
 ## 다양한 캐싱 환경 ##
 ### 캐싱 기법  ###
 - 한정된 빠른공간(=캐시)에 요청된 데이터를 저장해 두었다가 후석 요청시 캐시로부터 직접 서비스하는 방식
-- paging system외에도 cache memory, buffer caching, web caching등 다양한 분야에서 사용
+- paging system외에도 cache memory, buffer caching, web caching등 다양한 분야에서 사용  
+
 ### 캐시 운영의 시간 제약 ###
 - 교체 알고리즘에서 삭제할 항목을 결정하는 일에 지나치게 많은 시간이 걸리는 경우 실제 시스템에서 사용할 수 없음
 - Buffer caching이나 web caching의 경우 : O(1) ~ O(log N) 정도까진 허용
@@ -137,7 +138,7 @@ comments: true
 - 프로세스의 원활한 수행에 필요한 최소한의 페이지프레임수를 할당받지 못한 경우 발생
 - page fault rate이 매우 높아짐
 - CPU utilization이 낮아짐
-- OS는 CPU utilization이 낮아지니까 MPD(MUltiprogramming degree)를 높여야 한다고 판단
+- OS는 CPU utilization이 낮아지니까 MPD(Multiprogramming degree)를 높여야 한다고 판단
 - 또다른 프로세스가 시스템에 추가됨
 - 프로세스 당 할당된 프레임의 수가 더욱 감소
 - 프로세스는 페이지의 swap in / swap out으로 매우 바쁨
@@ -147,9 +148,11 @@ comments: true
 	 
 	
 ## Working-Set Model ##
+
 ### Locality of reference  ###
 - 프로세스는 특정 시간 동안 일정 장소만을 집중적으로 참조한다  
 - 집중적으로 참조되는 해당 페이지들의 집합을 working set이라 한다  
+
 ### Working-set Model ###
 - Locality에 기반하여 프로세스가 일정시간동안 원할하게 수행되기 위해 한꺼번에 메모리에 올라와있어야 하는 페이지들의 집합을 워킹셋이라 정의  
 - 워킹셋 모델에서는 프로세스의 워킹셋 전체가 메모리에 올라와있어야 수행되고 그렇지 않을 경우 모든 프레임을 반납한 후 전체 프로세스가 swap out(suspended)
