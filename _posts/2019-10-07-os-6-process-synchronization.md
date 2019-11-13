@@ -16,7 +16,7 @@ comments: true
 * 여러 주체가 하나의 데이터를 접근하려 하는것은 문제가 될 수 있음
 * CPU가 하나면 괜찮지만, 여러 CPU를 쓰는 경우
 * 혹은 프로세스 간 공유메모리를 사용할 때
-* 하지만 더 중요한번 커널 내부 데이터를 접근하는 루틴들 간(예 : 커널모드 수행 중 인터럽트 커널모드 다른 루틴 수행시)
+* 하지만 더 중요한번 커널 내부 데이터를 접근하는 루틴들 간(예 : 커널모드 수행 중 인터럽트 커널모드 다른 루틴 수행시)의 경쟁상태임. 프로세스야 뭐 공유메모리 쓰는거 아니면 보통은 자기코드만 건들이니까 괜찮은데, 커널모드는 여러 프로세스가 다같이 쓰는거라.. 이게 주요하게 경쟁상태가 발생되는 원인임
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_03.png?raw=true)
 
 ### OS에서 race condition은 언제 발생하는가? ###
@@ -24,19 +24,20 @@ comments: true
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_04.png?raw=true)
 
 * count 값이 +- 0 이길 기대하지만, 실제로는 증가된 값만 반영됨
-* 그래서 이런 중요한 작업의 경우 작업 중간에 인터럽트 루틴으로 넘어가지 않고(disable) 작업이 끝나면 인터럽트 처리 루틴으로 넘어간다(enable)
+* 그래서 이런 중요한 작업의 경우 작업 중간에 인터럽트 루틴으로 넘어가지 않고(disable) 작업이 끝나면 인터럽트 처리 루틴으로 넘어가야한다(enable)
 
 ### Preempt a process running in kernel ###
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_05.png?raw=true)
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_06.png?raw=true)
 
 * 카운트가 2 증가되길 기대되지만 실제로는 1만 증가되어버림
-* 해결법은 단순.. 그냥 커널모드에 있을때는 할당시간이 끝났다고 해도 CPU를 선점당하지 않도록 해주면 된다.(잠시 유보) 커널모드가 끝나고 유저모드로 돌아올 때 CPU를 다른 프로세스에 주면 된다. 
+* 해결법은 단순.. 그냥 어떤 프로세스가 커널모드에 있을때는 본인의 할당시간이 끝났다고 해도 타 프로세스에 CPU를 선점당하지 않도록 해주면 된다.(잠시 봐주기) 커널모드가 끝나고 유저모드로 돌아올 때 CPU를 다른 프로세스에 주면 된다. 
 
 ### Multiprocessor ###
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_07.png?raw=true)
-* 해결법1 : 데이타를 들어갈 때 데이터에 락을 걸어서 다른 CPU가 접근할 수 없도록 해야한다 
-* 해결법2 : 커널을 하나의 CPU만 쓰도록 하는것이다. (비효율적)
+* 위의 경우들이야 CPU가 하나니까.. 커널모드일때 선점을 안당하게 하니 어쩌니 하거나 인터럽트 루틴을 넘어가는 조건을 주거나 등등 할 수 있지만 애초에 CPU가 여러개라면?!?!?
+* 해결법1 : 데이타를 들어갈 때 데이터에 락을 걸어서 다른 CPU가 접근할 수 없도록 해야한다 - 커널 전체에 하나의 자물쇠를 걸기
+* 해결법2 : 커널을 하나의 CPU만 쓰도록 하는것이다. (비효율적) - 데이터 하나하나에 자물쇠를 걸기
 
   
 ### Process Synchronization 문제 ###
@@ -78,7 +79,8 @@ comments: true
 * 그리고 상대방의 플래그를 체크해서 거짓일때까지 대기
 * 쓰고 나온 뒤엔 자기 플래그를 거짓으로 변경해줌  
 * 문제점 : Progress 조건에 위배. 둘다 깃발만 들었을땐 빈 임계구역에 아무도 못들어감. 즉 임계구역에 들어가고 난 뒤에 플래그를 거짓으로 바꾸기 때문임
-  
+* 좀 더 풀어서 설명하면, 만약 P0가 깃발을 들고 CPU를 P1에게 빼앗겼다고 치자. 그럼 P1도 자기 깃발 들거고, 근데 P0도 들었네? 대기해야지..-> 이러면 결국 둘다 깃발을 들어버려서 그 누구도 들어갈 수가 없게됨. 무한 양보!!
+  
 ### 알고리즘 3 - 피터슨 알고리즘 ###
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_11.png?raw=true)
 
