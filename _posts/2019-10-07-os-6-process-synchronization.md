@@ -68,7 +68,8 @@ comments: true
 * turn이 0이되면 while 문을 빠져나오고 임계구역에 접근
 * 갔다오면 turn을 상대방 숫자로 바꿔줌(1)
 * 문제점 : Progress 조건에 위배됨. 아무도 임계구역에 없을때 들어가야하는데…음..이 코드는 반드시 교대로 들어가게 되어있기 때문임
-  
+* 극단적으로 P0는 굉장히 자주 일어나고, P1은 딱 한번밖에 안일어난다면 P0는 P1이 턴을 넘겨주지 않는한 접근권한을 못 얻기 때문에, 두 프로세스가 비슷한 빈도수로 번갈아 일어날게 아니라면 사용하기 힘든 알고리즘이 
+
 ### 알고리즘 2 ###
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_10.png?raw=true)
  
