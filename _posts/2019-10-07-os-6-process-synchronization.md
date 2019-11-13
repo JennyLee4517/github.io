@@ -204,6 +204,8 @@ wakeup(P); // 다음 애를 깨워주기
 	* Writer는 대기중인 reader가 하나도 없을 때 비로소 db 접근이 허용된다
 	* 일단 writer가 db에 접근중이면 reader들은 접근이 금지된다
 	* Writer가 db에서 빠져나가야만 reader의 접근이 허용된다
+* Writer should be waiting until all the readers are satisfied even if the writer comes earlier -> writer's starvation
+* Set maximun readers or give regular turn for the writer.
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_17.png?raw=true) 
 ![image](https://github.com/JennyLee4517/jennylee4517.github.io/blob/master/_posts/images/06_18.png?raw=true)
 
